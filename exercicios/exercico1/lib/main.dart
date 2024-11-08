@@ -61,7 +61,7 @@ criaApp() {
 
 ################### EXERCÍCIO 4 ################## */
 
-criaApp() {
+/* criaApp() {
   // Modifique o código para reconstruir a imagem
   // de referência, com os textos 'Entrar' e
   // 'Cadastrar-se'
@@ -90,6 +90,33 @@ criaApp() {
               ),
             )
           ],
+        ),
+      ),
+    ),
+  );
+} */
+
+/*
+
+################### EXERCÍCIO 5 ################## */
+
+Widget criaApp() {
+  // Construa o app segundo a tela de referência.
+  // Para isso, substitua o Placeholder pelos
+  // widgets adequados.
+  //
+  // - A distância entre o ícone e o texto é de 8 pixels.
+  // - O enchimento ao redor do conjunto (ícone e texto)
+  // é de 16 pixels.
+  // - A cor do enchimento é Colors.blueGrey.shade100
+  // - O texto e o ícone possuem tamanho 20 pixels.
+  return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: Scaffold(
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          color: Colors.grey,
         ),
       ),
     ),
