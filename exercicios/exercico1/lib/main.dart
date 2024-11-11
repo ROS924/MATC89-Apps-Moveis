@@ -116,8 +116,21 @@ Widget criaApp() {
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(16),
-          color: Colors.grey,
-        ),
+          color: Colors.blueGrey.shade100,
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.favorite,
+                color: Colors.red,
+              ),
+              Text('Like',style: TextStyle(fontSize:20))
+              
+            ],
+          ),
+        )
+        
       ),
     ),
   );
