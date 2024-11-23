@@ -52,7 +52,9 @@ class _BotaoLikeState extends State<BotaoLike> {
 // e o texto é "Like".
 // ... */
 
-//############# EXERCÍCIO 2 ###################
+
+
+/* //############# EXERCÍCIO 2 ###################
 
 void main() {
   runApp(
@@ -86,8 +88,7 @@ class BotaoLike extends StatelessWidget {
       ),
     );
   }
-}
-
+} 
 
 // Crie o widget BotaoLike, que é um ElevatedButton que contém
 // um ícone e um texto. O ícone é um coração preenchido.
@@ -96,3 +97,162 @@ class BotaoLike extends StatelessWidget {
 // Se o parâmetro não for fornecido, o texto padrão é "Like".
 // ...
 
+*/
+
+
+
+
+
+/* //############# EXERCÍCIO 3 ###################
+
+
+void main() {
+  runApp(const MaterialApp(
+    title: 'Navegação',
+    home: Inicio(),
+  ));
+}
+
+class Inicio extends StatelessWidget {
+  const Inicio({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(home: MyAppBar(),);
+  }
+}
+
+final ButtonStyle appBarButtonStyle = TextButton.styleFrom(
+  foregroundColor: Colors.white,
+  backgroundColor: Colors.blue,
+  shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(2))
+  )
+);
+
+
+class MyAppBar extends StatelessWidget {
+  const MyAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Container(
+          padding: const EdgeInsets.all(16),
+          color: Colors.blue,
+          child: const Text("Início",style: TextStyle(color: Colors.white),)),
+        actions: <Widget> [
+          TextButton(
+            style: appBarButtonStyle,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext detalhe){
+                    return Scaffold(
+                      appBar: AppBar(
+                        title: Container(
+                          padding: const EdgeInsets.all(16),
+                          color: Colors.blue,
+                          child: const Text("Detalhe",style: TextStyle(color: Colors.white))
+                        ),
+                      ),
+                      body: const Center(child: Text("Azul"),),
+                    );
+                  }
+                )
+                
+              );
+            },
+            child: const Text("Azul"),
+          ),
+          
+          TextButton(
+            style: appBarButtonStyle,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext detalhe){
+                    return Scaffold(
+                      appBar: AppBar(
+                        title: Container(
+                          padding: const EdgeInsets.all(16),
+                          color: Colors.blue,
+                          child: const Text("Detalhe",style: TextStyle(color: Colors.white))
+                        ),
+                      ),
+                      body: const Center(child: Text("Vermelho"),),
+                    );
+                  }
+                )
+                
+              );
+            },
+            child: const Text("Vermelho"),
+          ),
+        ],
+      ),
+    );
+  }
+} */
+
+
+//############# EXERCÍCIO 4 ###################
+
+
+void main() {
+  runApp(const MaterialApp(
+    home: Scaffold(body: Inicio()),
+  ));
+}
+
+class Inicio extends StatelessWidget {
+  const Inicio({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey[100],
+      child: const Center(
+        child: BotaoOnOff(),
+      ),
+    );
+  }
+}
+
+class BotaoOnOff extends StatefulWidget {
+  final String valorInicial;
+  const BotaoOnOff({super.key, this.valorInicial = "Off"});
+
+  @override
+  State<BotaoOnOff> createState() => _BotaoOnOffState();
+}
+
+class _BotaoOnOffState extends State<BotaoOnOff> {
+  String texto = "Off";
+
+  @override
+  void initState() {
+    super.initState();
+    texto = widget.valorInicial;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        setState(() {
+          if (texto == "Off"){
+            texto = "On";
+          }
+          else{
+            texto = "Off";
+          }
+        });
+      },
+      child: Text(texto),
+    );
+  }
+}
