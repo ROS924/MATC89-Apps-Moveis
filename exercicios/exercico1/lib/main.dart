@@ -117,15 +117,17 @@ Widget criaApp() {
         child: Container(
           padding: const EdgeInsets.all(16),
           color: Colors.blueGrey.shade100,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
+              const Icon(
                 Icons.favorite,
                 color: Colors.red,
+                size: 20,                
               ),
-              Text('Like',style: TextStyle(fontSize:20))
+              Container(padding: const EdgeInsets.all(8)),
+              const Text('Like',style: TextStyle(fontSize:20))
               
             ],
           ),
