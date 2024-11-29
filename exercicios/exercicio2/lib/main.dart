@@ -52,8 +52,6 @@ class _BotaoLikeState extends State<BotaoLike> {
 // e o texto é "Like".
 // ... */
 
-
-
 /* //############# EXERCÍCIO 2 ###################
 
 void main() {
@@ -99,12 +97,7 @@ class BotaoLike extends StatelessWidget {
 
 */
 
-
-
-
-
-/* //############# EXERCÍCIO 3 ###################
-
+//############# EXERCÍCIO 3 ###################
 
 void main() {
   runApp(const MaterialApp(
@@ -118,18 +111,17 @@ class Inicio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: MyAppBar(),);
+    return const MaterialApp(
+      home: MyAppBar(),
+    );
   }
 }
 
 final ButtonStyle appBarButtonStyle = TextButton.styleFrom(
-  foregroundColor: Colors.white,
-  backgroundColor: Colors.blue,
-  shape: const RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(2))
-  )
-);
-
+    foregroundColor: Colors.white,
+    backgroundColor: Colors.blue,
+    shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(2))));
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
@@ -139,70 +131,73 @@ class MyAppBar extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Container(
-          padding: const EdgeInsets.all(16),
-          color: Colors.blue,
-          child: const Text("Início",style: TextStyle(color: Colors.white),)),
-        actions: <Widget> [
+            padding: const EdgeInsets.all(16),
+            color: Colors.blue,
+            child: const Text(
+              "Início",
+              style: TextStyle(color: Colors.white),
+            )),
+        centerTitle: true,
+      ),
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
           TextButton(
             style: appBarButtonStyle,
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext detalhe){
-                    return Scaffold(
-                      appBar: AppBar(
-                        title: Container(
-                          padding: const EdgeInsets.all(16),
-                          color: Colors.blue,
-                          child: const Text("Detalhe",style: TextStyle(color: Colors.white))
-                        ),
-                      ),
-                      body: const Center(child: Text("Azul"),),
-                    );
-                  }
-                )
-                
-              );
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (BuildContext detalhe) {
+                return Scaffold(
+                  appBar: AppBar(
+                    title: Container(
+                        padding: const EdgeInsets.all(16),
+                        color: Colors.blue,
+                        child: const Text("Detalhe",
+                            style: TextStyle(color: Colors.white))),
+                    centerTitle: true,
+                  ),
+                  body: const Center(
+                    child: Text("Azul"),
+                  ),
+                );
+              }));
             },
             child: const Text("Azul"),
           ),
-          
           TextButton(
             style: appBarButtonStyle,
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext detalhe){
-                    return Scaffold(
-                      appBar: AppBar(
-                        title: Container(
-                          padding: const EdgeInsets.all(16),
-                          color: Colors.blue,
-                          child: const Text("Detalhe",style: TextStyle(color: Colors.white))
-                        ),
-                      ),
-                      body: const Center(child: Text("Vermelho"),),
-                    );
-                  }
-                )
-                
-              );
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (BuildContext detalhe) {
+                return Scaffold(
+                  appBar: AppBar(
+                    title: Container(
+                        padding: const EdgeInsets.all(16),
+                        color: Colors.blue,
+                        child: const Text("Detalhe",
+                            style: TextStyle(color: Colors.white))),
+                    centerTitle: true,
+                  ),
+                  body: const Center(
+                    child: Text("Vermelho"),
+                  ),
+                );
+              }));
             },
             child: const Text("Vermelho"),
           ),
         ],
-      ),
+      )),
     );
   }
-} */
+} 
 
 
 //############# EXERCÍCIO 4 ###################
 
 
-void main() {
+/* void main() {
   runApp(const MaterialApp(
     home: Scaffold(body: Inicio()),
   ));
@@ -255,4 +250,4 @@ class _BotaoOnOffState extends State<BotaoOnOff> {
       child: Text(texto),
     );
   }
-}
+} */
